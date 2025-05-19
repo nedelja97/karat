@@ -3,6 +3,7 @@ import { useGetListQuery } from "@/store/api/product";
 import "../src/styles/Home.scss";
 import InfoCard from "@/components/card/infoCard/InfoCard";
 import CardData from "../src/data/Info";
+import Newsletter from "@/components/newsletter/Newsletter";
 
 export default function Home() {
   const isMobile = useIsMobile();
@@ -16,6 +17,7 @@ export default function Home() {
 
   return (
     <div className="container">
+      <Newsletter />
       <div className="info-cards">
         {CardData.map((item, index) => {
           return (
