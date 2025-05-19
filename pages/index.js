@@ -18,6 +18,7 @@ export default function Home() {
         "loading..."
       ) : (
         <>
+          <h1>title</h1>
           {getList?.fact} - {getList?.length}
         </>
       )}
