@@ -1,0 +1,13 @@
+.info-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 40px 16px;
+
+  @media only screen and (min-width: 1200px) {
+    flex-direction: row;
+    padding: 50px 0;
+    width: 70%;
+    margin: auto;
+  }
+}
