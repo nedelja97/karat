@@ -9,6 +9,7 @@ import Bag from "../../../public/images/icons/bag.svg";
 import Hamburger from "../../../public/images/icons/hamburger.svg";
 import Close from "../../../public/images/icons/close.svg";
 import Diamond from "../../../public/images/global/conte-diamonds.png";
+import Search from "../../../public/images/icons/search.svg";
 import { useState } from "react";
 import Input from "../input/Input";
 
@@ -95,7 +96,10 @@ function Header() {
               </Link>
             </div>
 
-            <Input />
+            <div className="input-wrapper">
+              <Image src={Search} alt="Search" width={20} height={20} />
+              <input placeholder="Pretražite proivode" />
+            </div>
 
             <div className="dekstop-navigatio-functions">
               <Image src={Avatar} alt="avatar" width={20} height={20} />

@@ -6,6 +6,7 @@ import CardData from "../src/data/Info";
 import LocationData from "../src/data/Location";
 import PromoProductsData from "../src/data/PromoProducts";
 import CategoriesData from "../src/data/Categories";
+import allCategoriesData from "../src/data/AllCategorisData";
 import AllProductsData from "../src/data/Products";
 import AllBrandsData from "../src/data/BrandData";
 import Newsletter from "@/components/newsletter/Newsletter";
@@ -15,9 +16,36 @@ import CategoriCard from "@/components/card/categorieCard/CategoriCard";
 import AllProducts from "@/components/product/AllProducts/AllProducts";
 import Brand from "@/components/card/brand/Brand";
 import { useRef } from "react";
+import WelcomeCard from "@/components/card/welcomeCard/WelcomeCard";
+import ArrowRight from "../public/images/icons/arrow-right.svg";
+import Image from "next/image";
+import SeeCategoriCard from "@/components/card/seeCategoriCard/SeeCategoriCard";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import Baner from "../public/images/global/baner_2-1678353279-584.png";
+import Baner2 from "../public/images/global/promo.jpg";
 
 export default function Home() {
   const isMobile = useIsMobile();
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 1,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 1,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 1,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
+  };
 
   const { data: getList, isLoading } = useGetListQuery(
     {},
@@ -48,6 +76,38 @@ export default function Home() {
 
   return (
     <div className="container">
+      <div className="carousle-style">
+        <Carousel
+          swipeable={false}
+          draggable={false}
+          showDots={true}
+          responsive={responsive}
+          infinite={true}
+          arrows={false}
+          autoPlay={true}
+          autoPlaySpeed={2000}
+          keyBoardControl={true}
+          customTransition="all .5"
+          transitionDuration={500}
+          containerClass="carousel-container"
+          removeArrowOnDeviceType={["tablet", "mobile"]}
+          dotListClass="custom-dot-list-style"
+          itemClass="carousel-item-padding-40-px"
+        >
+          <div>
+            <Image src={Baner} alt="Baner" />
+          </div>
+          <Image src={Baner2} alt="Baner2" />
+        </Carousel>
+      </div>
+      <div className="welcome-cards">
+        <WelcomeCard />
+        <div className="all-categories">
+          {allCategoriesData.map((item, index) => {
+            return <SeeCategoriCard key={index} item={item} />;
+          })}
+        </div>
+      </div>
       <div style={{ position: "relative" }}>
         <div className="brands-scroll-wrapper" ref={scrollRef}>
           {AllBrandsData.map((item, index) => (
@@ -56,7 +116,7 @@ export default function Home() {
         </div>
 
         <button className="scroll-right" onClick={scrollRightLoop}>
-          &gt;
+          <Image src={ArrowRight} alt="ArrowRight" width={20} height={20} />
         </button>
       </div>
 

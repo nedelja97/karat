@@ -172,6 +172,27 @@
       }
     }
 
+    .input-wrapper {
+      position: relative;
+      input {
+        width: 300px;
+        margin-right: -30px;
+        border-radius: 20px;
+        border: none;
+        background: #f7f7f7;
+        height: 30px;
+        padding-left: 20px;
+        box-sizing: border-box;
+        outline: none;
+      }
+
+      img {
+        position: absolute;
+        top: 5px;
+        right: -20px;
+      }
+    }
+
     .dekstop-navigatio-functions {
       display: flex;
       flex-direction: row;

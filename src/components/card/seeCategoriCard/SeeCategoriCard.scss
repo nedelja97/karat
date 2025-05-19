@@ -1,0 +1,31 @@
+.see-categori-card {
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-radius: 20px;
+
+  @media only screen and (min-width: 1200px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  img {
+    width: 100%;
+
+    @media only screen and (min-width: 1200px) {
+      height: 200px;
+    }
+  }
+
+  h3 {
+    font-weight: 300;
+    margin-bottom: 10px;
+  }
+
+  a {
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 12px;
+    color: #000;
+  }
+}

@@ -77,6 +77,10 @@
   gap: 1rem;
   padding: 40px 16px 0;
 
+  @media only screen and (min-width: 1200px) {
+    width: 95%;
+  }
+
   &::-webkit-scrollbar {
     display: none;
   }
@@ -97,7 +101,7 @@
 
 .scroll-right {
   position: absolute;
-  right: 0;
+  right: 20px;
   top: 40px;
   background-color: #cc945a;
   border: none;
@@ -111,5 +115,72 @@
   &.right {
     position: absolute;
     right: 0px;
+  }
+}
+
+.welcome-cards {
+  padding: 40px 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @media only screen and (min-width: 1200px) {
+    flex-direction: row;
+    justify-content: center;
+    margin: auto;
+  }
+}
+
+.all-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @media only screen and (min-width: 1200px) {
+    flex-direction: row;
+  }
+}
+
+.carousel-container {
+  padding-top: 40px;
+
+  img {
+    border-radius: 20px;
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+  }
+
+  .react-multi-carousel-dot-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    right: 15px;
+    left: unset;
+    top: 40px;
+  }
+
+  .react-multi-carousel-dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .react-multi-carousel-dot button {
+    border-color: transparent;
+    width: 6px;
+    height: 6px;
+    background-color: #fff;
+  }
+
+  .react-multi-carousel-dot--active button {
+    background-color: #ca965c;
+  }
+}
+
+.carousle-style {
+  padding: 0 16px;
+
+  @media only screen and (min-width: 1200px) {
+    padding: 0;
   }
 }
