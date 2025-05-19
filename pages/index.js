@@ -1,10 +1,9 @@
-import Button from "@/components/button/Button";
-import Input from "@/components/input/Input";
+import { useIsMobile } from "@/components/useIsMobile";
 import { useGetListQuery } from "@/store/api/product";
-import Image from "next/image";
-import Link from "next/link";
 
 export default function Home() {
+  const isMobile = useIsMobile();
+
   const { data: getList, isLoading } = useGetListQuery(
     {},
     {
@@ -13,12 +12,12 @@ export default function Home() {
   );
 
   return (
-    <div>
+    <div className="container">
       {isLoading ? (
         "loading..."
       ) : (
         <>
-          <h1>title</h1>
+          {isMobile ? <h1>title mob</h1> : <h1>title desk</h1>}
           {getList?.fact} - {getList?.length}
         </>
       )}
