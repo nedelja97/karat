@@ -1,0 +1,86 @@
+.location-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  font-weight: 300;
+
+  @media only screen and (min-width: 1200px) {
+    width: 49%;
+    flex-direction: row;
+  }
+
+  .local {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+    @media only screen and (min-width: 1200px) {
+      border-top-right-radius: 0;
+      border-bottom-left-radius: 20px;
+      width: 300px;
+      height: 100%;
+    }
+  }
+
+  .location-content {
+    background-color: #f7f7f7;
+    padding: 30px 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+    @media only screen and (min-width: 1200px) {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+      width: 100%;
+      padding: 30px 40px;
+    }
+
+    h4 {
+      font-size: 20px;
+      font-weight: 300;
+      margin-bottom: 20px;
+
+      @media only screen and (min-width: 1200px) {
+        font-size: 24px;
+        margin-bottom: 30px;
+      }
+    }
+
+    .location-contact-info {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 15px;
+      gap: 3px;
+
+      a {
+        color: #353535;
+        text-decoration: none;
+      }
+    }
+
+    .location-working-hours {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 25px;
+      gap: 3px;
+
+      a {
+        color: #353535;
+        text-decoration: none;
+      }
+    }
+
+    button {
+      background-color: #fff;
+      border-radius: 20px;
+      width: 200px;
+      height: 40px;
+      border: none;
+      cursor: pointer;
+    }
+  }
+}

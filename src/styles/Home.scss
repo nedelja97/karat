@@ -11,3 +11,33 @@
     margin: auto;
   }
 }
+
+.location-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 40px 16px 0;
+
+  @media only screen and (min-width: 1200px) {
+    gap: 30px;
+  }
+
+  h3 {
+    font-size: 20px;
+    line-height: 25px;
+    font-weight: 300;
+    text-align: center;
+  }
+
+  .location-cards-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    @media only screen and (min-width: 1200px) {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      gap: 20px;
+    }
+  }
+}
