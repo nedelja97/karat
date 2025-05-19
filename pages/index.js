@@ -7,11 +7,14 @@ import LocationData from "../src/data/Location";
 import PromoProductsData from "../src/data/PromoProducts";
 import CategoriesData from "../src/data/Categories";
 import AllProductsData from "../src/data/Products";
+import AllBrandsData from "../src/data/BrandData";
 import Newsletter from "@/components/newsletter/Newsletter";
 import LocationCard from "@/components/card/locationCard/LocationCard";
 import PromoCard from "@/components/card/promoCard/PromoCard";
 import CategoriCard from "@/components/card/categorieCard/CategoriCard";
 import AllProducts from "@/components/product/AllProducts/AllProducts";
+import Brand from "@/components/card/brand/Brand";
+import { useRef } from "react";
 
 export default function Home() {
   const isMobile = useIsMobile();
@@ -23,8 +26,40 @@ export default function Home() {
     }
   );
 
+  const scrollRef = useRef(null);
+
+  const scrollRightLoop = () => {
+    if (scrollRef.current) {
+      const scrollAmount = window.innerWidth >= 1024 ? 350 : 360;
+      const container = scrollRef.current;
+
+      if (
+        container.scrollLeft + container.offsetWidth >=
+        container.scrollWidth
+      ) {
+        // Vraćanje na početak ako smo na kraju
+        container.scrollTo({ left: 0, behavior: "smooth" });
+      } else {
+        // Inače skroluj desno
+        container.scrollBy({ left: scrollAmount, behavior: "smooth" });
+      }
+    }
+  };
+
   return (
     <div className="container">
+      <div style={{ position: "relative" }}>
+        <div className="brands-scroll-wrapper" ref={scrollRef}>
+          {AllBrandsData.map((item, index) => (
+            <Brand key={index} item={item} />
+          ))}
+        </div>
+
+        <button className="scroll-right" onClick={scrollRightLoop}>
+          &gt;
+        </button>
+      </div>
+
       <AllProducts data={AllProductsData} />
       <PromoCard
         title={"Swatch satovi"}

@@ -69,3 +69,47 @@
     }
   }
 }
+
+.brands-scroll-wrapper {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 1rem;
+  padding: 40px 16px 0;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.brand-wrapper {
+  flex: 0 0 auto;
+  width: 100%; // mobilni
+
+  @media (min-width: 768px) {
+    width: 25%; // prikazuje 4 u redu na desktopu
+  }
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scroll-right {
+  position: absolute;
+  right: 0;
+  top: 40px;
+  background-color: #cc945a;
+  border: none;
+  padding: 8px;
+  border-radius: 20px;
+  height: 80px;
+  cursor: pointer;
+  color: white;
+  z-index: 2;
+
+  &.right {
+    position: absolute;
+    right: 0px;
+  }
+}
