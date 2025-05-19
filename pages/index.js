@@ -4,8 +4,10 @@ import "../src/styles/Home.scss";
 import InfoCard from "@/components/card/infoCard/InfoCard";
 import CardData from "../src/data/Info";
 import LocationData from "../src/data/Location";
+import PromoProductsData from "../src/data/PromoProducts";
 import Newsletter from "@/components/newsletter/Newsletter";
 import LocationCard from "@/components/card/locationCard/LocationCard";
+import PromoCard from "@/components/card/promoCard/PromoCard";
 
 export default function Home() {
   const isMobile = useIsMobile();
@@ -19,6 +21,15 @@ export default function Home() {
 
   return (
     <div className="container">
+      <PromoCard
+        title={"Swatch satovi"}
+        text={
+          "Na našem sajtu i prodavnicama možete pronaći veliki izbor Swatch satova"
+        }
+        buttonTitle={"Pogledajte"}
+        image={"../images/global/promo.jpg"}
+        data={PromoProductsData}
+      />
       <div className="location-cards">
         <h3>Naša prodajna mesta</h3>
         <div className="location-cards-wrapper">
