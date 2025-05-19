@@ -6,10 +6,12 @@ import CardData from "../src/data/Info";
 import LocationData from "../src/data/Location";
 import PromoProductsData from "../src/data/PromoProducts";
 import CategoriesData from "../src/data/Categories";
+import AllProductsData from "../src/data/Products";
 import Newsletter from "@/components/newsletter/Newsletter";
 import LocationCard from "@/components/card/locationCard/LocationCard";
 import PromoCard from "@/components/card/promoCard/PromoCard";
 import CategoriCard from "@/components/card/categorieCard/CategoriCard";
+import AllProducts from "@/components/product/AllProducts/AllProducts";
 
 export default function Home() {
   const isMobile = useIsMobile();
@@ -23,6 +25,7 @@ export default function Home() {
 
   return (
     <div className="container">
+      <AllProducts data={AllProductsData} />
       <PromoCard
         title={"Swatch satovi"}
         text={

@@ -11,7 +11,7 @@ function BasicProductCard({ item }) {
       />
       <div className="basic-product-info">
         <h3>{item.title}</h3>
-        <span>{item.price}</span>
+        <span>{item.price} RSD</span>
       </div>
     </div>
   );
