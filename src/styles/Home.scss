@@ -41,3 +41,31 @@
     }
   }
 }
+
+.popular-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 40px 16px 0;
+
+  @media only screen and (min-width: 1200px) {
+    gap: 30px;
+  }
+
+  h3 {
+    font-size: 20px;
+    line-height: 25px;
+    font-weight: 300;
+    text-align: center;
+  }
+
+  .categori-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @media only screen and (min-width: 1200px) {
+      flex-direction: row;
+    }
+  }
+}

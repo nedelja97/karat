@@ -39,6 +39,11 @@
       border: none;
       cursor: pointer;
       color: #000;
+
+      &:hover {
+        background-color: #000;
+        color: #fff;
+      }
     }
 
     .promo-products-wrapper {

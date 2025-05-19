@@ -5,9 +5,11 @@ import InfoCard from "@/components/card/infoCard/InfoCard";
 import CardData from "../src/data/Info";
 import LocationData from "../src/data/Location";
 import PromoProductsData from "../src/data/PromoProducts";
+import CategoriesData from "../src/data/Categories";
 import Newsletter from "@/components/newsletter/Newsletter";
 import LocationCard from "@/components/card/locationCard/LocationCard";
 import PromoCard from "@/components/card/promoCard/PromoCard";
+import CategoriCard from "@/components/card/categorieCard/CategoriCard";
 
 export default function Home() {
   const isMobile = useIsMobile();
@@ -21,6 +23,23 @@ export default function Home() {
 
   return (
     <div className="container">
+      <PromoCard
+        title={"Swatch satovi"}
+        text={
+          "Na našem sajtu i prodavnicama možete pronaći veliki izbor Swatch satova"
+        }
+        buttonTitle={"Pogledajte"}
+        image={"../images/global/promo.jpg"}
+        data={PromoProductsData}
+      />
+      <div className="popular-categories">
+        <h3>Izdvajamo vaše omiljene kategorije</h3>
+        <div className="categori-cards">
+          {CategoriesData.map((item, index) => {
+            return <CategoriCard item={item} key={index} />;
+          })}
+        </div>
+      </div>
       <PromoCard
         title={"Swatch satovi"}
         text={
